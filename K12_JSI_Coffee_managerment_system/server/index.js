@@ -13,6 +13,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.single("image"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({
+      success: false,
+      message: "No image file was uploaded",
+    });
+  }
+
   cloudinary.uploader.upload(req.file.path, (err, result) => {
     if (err) {
       console.log(err);
@@ -27,6 +34,14 @@ app.post("/upload", upload.single("image"), (req, res) => {
       message: "Uploaded!",
       data: result,
     });
+  });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({
+    success: false,
+    message: "Unable to process upload",
   });
 });
 

@@ -15,7 +15,13 @@ productForm.addEventListener("submit", function (event) {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
+      .then(async (response) => {
+        const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.message || "Image upload failed");
+        }
+        return result;
+      })
       .then((result) => {
         db.collection("products")
           .add({
