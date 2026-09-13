@@ -4,7 +4,7 @@
   --color-danger: #b8001f;
   --color-primary-blur: rgba(184, 0, 31, 0.8);
   --color-black: #000;
-  --color-white: #fff;
+  --color-white: #800000;
   --color-input-dark: #0b192c;
   --color-grey: #5c5c5e;
   --color-grey-light: #dcdcdc;
@@ -93,17 +93,17 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.page-wrapper {
+.page-wrapper.admin-layout {
   display: flex;
   flex-wrap: nowrap;
   min-height: 100vh;
 }
-.sidebar {
+.admin-layout .sidebar {
   min-height: 100vh;
   padding-top: 1.5rem;
   width: 250px;
 }
-.content {
+.admin-layout .content {
   flex: 1;
   background-color: #f8f9fb;
   padding: 2rem 2rem;

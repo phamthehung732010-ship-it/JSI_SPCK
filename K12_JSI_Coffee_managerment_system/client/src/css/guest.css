@@ -97,12 +97,6 @@ footer .footer-form input{
     height: 200px;
     object-fit: cover;
 }
-.order-form .btn-cancle {
-}
-.order-form .btn-cancle .icon{
-    /* font-size: 25px; */
-}
-
 /*  */
 .order-list .order-item img{
     width: 100px;
